@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
 import java.util.Vector;
+
 import util.Utilitaire;
 
 public class BourseManager {
@@ -16,6 +17,7 @@ public class BourseManager {
 					.prepareStatement("insert into COTATIONS(CODE_SOCIETE,DATE_COTATION,VAL_ACTION) values(?,?,?)");
 			ps.setString(1, codeSociete);
 			java.util.Date ds = new java.util.Date();
+			@SuppressWarnings("deprecation")
 			String strDs = ds.getYear() + 1900 + "-" + (1 + ds.getMonth())
 					+ "-" + ds.getDate();
 			ps.setDate(2, Date.valueOf(strDs));
