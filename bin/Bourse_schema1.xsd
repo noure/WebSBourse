@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://banque/ws" xmlns:tns="http://banque/ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ajoutCotation" type="tns:ajoutCotation"/>
+
+  <xs:element name="ajoutCotationResponse" type="tns:ajoutCotationResponse"/>
+
+  <xs:element name="getAll" type="tns:getAll"/>
+
+  <xs:element name="getAllResponse" type="tns:getAllResponse"/>
+
+  <xs:element name="getCotation" type="tns:getCotation"/>
+
+  <xs:element name="getCotationResponse" type="tns:getCotationResponse"/>
+
+  <xs:element name="getCotations" type="tns:getCotations"/>
+
+  <xs:element name="getCotationsResponse" type="tns:getCotationsResponse"/>
+
+  <xs:complexType name="ajoutCotation">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ajoutCotationResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getCotation">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCotationResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:cotation" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cotation">
+    <xs:sequence>
+      <xs:element name="codeSociete" type="xs:string" minOccurs="0"/>
+      <xs:element name="dateCotation" type="xs:string" minOccurs="0"/>
+      <xs:element name="valAction" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCotations">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg1" type="xs:string" minOccurs="0"/>
+      <xs:element name="arg2" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getCotationsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getAll">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getAllResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

@@ -89,7 +89,7 @@
   </binding>
   <service name="Bourse">
     <port name="WebSBoursePort" binding="tns:WebSBoursePortBinding">
-      <soap:address location="http://localhost:8888/Bourse"/>
+      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
     </port>
   </service>
 </definitions>
