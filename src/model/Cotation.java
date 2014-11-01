@@ -1,7 +1,5 @@
 package model;
 
-import java.sql.Date;
-
 public class Cotation {
 	private String codeSociete;
 	private String dateCotation;
